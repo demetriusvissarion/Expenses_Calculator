@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
+
+import Child1 from "./Test/child1";
 
 const App = () => {
   const expenses = [
@@ -42,6 +44,21 @@ const App = () => {
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
+    </div>
+  );
+};
+
+export const Counter = () => {
+  const { count, setCount } = useState(0);
+
+  const handleAdd = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div className="counter">
+      <Child1 handleAdd={handleAdd} />
+      {count}
     </div>
   );
 };
