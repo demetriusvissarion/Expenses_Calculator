@@ -6,6 +6,9 @@ import "./Expenses.css";
 
 const Expenses = (props) => {
   return (
+    // <div>
+    //   <ExpenseFilter />
+    </div>
     <Card className="expenses">
       <ExpenseItem
         title={props.items[0].title}

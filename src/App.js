@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
-import Child1 from "./Test/child1";
-import "./Test/child1.css";
+import Child1 from "./TestCounter/child1";
+import "./TestCounter/child1.css";
 
 const App = () => {
   const expenses = [
@@ -58,6 +58,7 @@ export function Counter() {
 
   return (
     <div className="child1_container">
+      <h4>Counter</h4>
       <Child1 handleAdd={handleAdd} />
       {count}
     </div>
