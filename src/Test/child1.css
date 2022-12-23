@@ -1,0 +1,31 @@
+.child1_container {
+  font-size: 2em;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 4px;
+  position: fixed;
+  padding: 1em 1em;
+  bottom: 2em;
+  left: 1em;
+}
+
+#counter_button_container {
+  background-color: white;
+  padding: 5px;
+  margin: 0;
+}
+
+#counter_button {
+  font-size: 1em;
+  background-color: rgb(164, 161, 161);
+  border: 1px solid grey;
+  border-radius: 3px;
+  box-shadow: 0 0 7px 2px grey;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+#counter_button:hover {
+  color: white;
+  background-color: rgb(79, 121, 18);
+}

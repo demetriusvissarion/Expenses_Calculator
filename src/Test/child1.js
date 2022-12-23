@@ -3,8 +3,10 @@ import "./child1.css";
 
 const Child1 = ({ handleAdd }) => {
   return (
-    <div className="child1_container">
-      <button onClick={handleAdd}>Add</button>
+    <div id="counter_button_container">
+      <button id="counter_button" onClick={handleAdd}>
+        Add
+      </button>
     </div>
   );
 };

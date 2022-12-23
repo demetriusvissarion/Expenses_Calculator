@@ -4,6 +4,7 @@ import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
 import Child1 from "./Test/child1";
+import "./Test/child1.css";
 
 const App = () => {
   const expenses = [
@@ -48,19 +49,19 @@ const App = () => {
   );
 };
 
-export const Counter = () => {
-  const { count, setCount } = useState(0);
+export function Counter() {
+  const [count, setCount] = useState(0);
 
   const handleAdd = () => {
     setCount(count + 1);
   };
 
   return (
-    <div className="counter">
+    <div className="child1_container">
       <Child1 handleAdd={handleAdd} />
       {count}
     </div>
   );
-};
+}
 
 export default App;
