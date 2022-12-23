@@ -8,7 +8,7 @@ const Expenses = (props) => {
   return (
     // <div>
     //   <ExpenseFilter />
-    </div>
+    // </div>
     <Card className="expenses">
       <ExpenseItem
         title={props.items[0].title}
