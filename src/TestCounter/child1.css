@@ -5,9 +5,9 @@ h4 {
 
 .child1_container {
   font-size: 2em;
-  background-color: white;
+  background-color: rgb(190, 181, 181);
   border: 1px solid grey;
-  border-radius: 6px;
+  border-radius: 20px;
   position: absolute;
   padding: 1em 1em;
   bottom: -14em;
@@ -15,7 +15,7 @@ h4 {
 }
 
 #counter_button_container {
-  background-color: white;
+  background-color: rgb(190, 181, 181);
 }
 
 #counter_button {
