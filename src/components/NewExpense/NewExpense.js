@@ -23,5 +23,5 @@ export default NewExpense;
 
 /* 
 here onSaveExpenseData is a function
-onSaveExpenseData prop receives saveExpenseDatahandler function as a value, so we don't execute it here, we just point at the function, so that hte function itself is passed to expense form
+onSaveExpenseData prop receives saveExpenseDatahandler function as a value, so we don't execute it here, we just point at the function, so that the function itself is passed to expense form
 */
