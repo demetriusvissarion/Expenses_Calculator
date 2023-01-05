@@ -10,6 +10,7 @@ const NewExpense = (props) => {
       id: Math.random().toString(),
     };
     props.onAddExpense(expenseData);
+    setActive(false);
   };
 
   const [active, setActive] = useState(false);
@@ -45,24 +46,6 @@ onSaveExpenseData prop receives saveExpenseDatahandler function as a value, so w
 //   <div className="new-expense">
 //     <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
 //   </div>
-
-//////// changed first page
-//// above return ---------------
-// const [active, setActive] = useState(false);
-// const onClick = () => setActive(true);
-
-//// inside return -------------
-// <div className="new-expense">
-//   <button type="button" onClick={() => onClick}>
-//     Add New Expense
-//   </button>
-
-//   {active && (
-//     <div className="new-expense">
-//       <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
-//     </div>
-//   )}
-// </div>;
 
 ////// Assignment 4: action plan
 // display only "Add New Expense" button page at begining (with existing expenses below)
