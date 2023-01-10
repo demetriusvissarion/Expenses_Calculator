@@ -26,12 +26,19 @@ const DUMMY_EXPENSES = [
     amount: 450,
     date: new Date(2021, 5, 12),
   },
+  {
+    id: "e5",
+    title: "Lamp",
+    amount: 29.99,
+    date: new Date(2022, 7, 30),
+  },
 ];
 
 const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   const addExpenseHandler = (expense) => {
+    console.log(expense);
     // setExpenses([expense, ...expenses]);  // this would work but it's not good practice
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses]; // this is good practice, because based on older snapshot
