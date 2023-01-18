@@ -7,14 +7,18 @@ import ExpensesChart from "./ExpensesChart";
 import "./Expenses.css";
 
 const Expenses = (props) => {
-  const [selectedYear, setSelectedYear] = useState("2021");
+  const [selectedYear, setSelectedYear] = useState(
+    new Date().getFullYear().toString()
+  );
 
   const selectedYearChangeHandler = (year) => {
     setSelectedYear(year);
   };
 
   const filteredExpenses = props.items.filter((expense) => {
-    console.log(`Expenses.js expense props: ${expense.date}`);
+    if (selectedYear === "All") {
+      return props.items;
+    }
     return expense.date.getFullYear().toString() === selectedYear;
   });
 
