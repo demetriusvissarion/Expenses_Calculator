@@ -19,16 +19,16 @@ const ExpensesChart = (props) => {
   ];
 
   //// Course way:
-  // for (const expense of props.expenses) {
-  //   const expenseMonth = expense.date.getMonth(); // Starting at zero => January => 0
-  //   chartDataPoints[expenseMonth].value += expense.amount;
-  // }
+  for (const expense of props.expenses) {
+    const expenseMonth = expense.date.getMonth(); // Starting at zero => January => 0
+    chartDataPoints[expenseMonth].value += expense.amount;
+  }
 
   // Michal way:
-  props.expenses.map((expense) => {
-    const expenseMonth = expense.date.getMonth();
-    chartDataPoints[expenseMonth].value += expense.amount;
-  });
+  // props.expenses.map((expense) => {
+  //   const expenseMonth = expense.date.getMonth();
+  //   chartDataPoints[expenseMonth].value += expense.amount;
+  // });
   return <Chart dataPoints={chartDataPoints} />;
 };
 

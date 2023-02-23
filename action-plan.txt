@@ -1,0 +1,22 @@
+Expenses_Calculator
+
+1. add welcome window and top navbar (see react-counter)
+   1.1 add at startup sign-in & login window and hide everything else 
+   1.2 once loged-in add Logout and Profile buttons (only visible after sign-in or login)
+       1.2.1 store name & password data on firebase (expenses as well)
+       1.2.2 load existing expenses from firebase or display just the
+   1.3 add app name on the left side of the navbar
+
+2. switch state management to redux toolkit
+   2.1 install react-redux & redux-toolkit
+   2.2 create store folder and index.js + slices: auth, expense, new-expense
+
+3. add sign-up form (modal)
+   3.1 form validation
+   3.2 error handling
+
+4. add login form (modal)
+   4.1 form validation
+   4.2 error handling
+
+5. add custom hook for http requests and error handling (see "15-building-custom-hooks-2 / task-organizer")

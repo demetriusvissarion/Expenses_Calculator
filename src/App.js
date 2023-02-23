@@ -6,6 +6,11 @@ import Expenses from "./components/Expenses/Expenses";
 import Child1 from "./TestCounter/child1";
 import "./TestCounter/child1.css";
 
+import Header from "./components/Header/Header";
+import Auth from "./components/Auth/Auth";
+import UserProfile from "./components/UserProfile/UserProfile";
+import { useSelector } from "react-redux";
+
 const DUMMY_EXPENSES = [
   {
     id: "e1",
@@ -36,6 +41,7 @@ const DUMMY_EXPENSES = [
 
 const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  const showAuth = useSelector((state) => state.auth.isAuthenticated);
 
   const addExpenseHandler = (expense) => {
     console.log(expense);
@@ -47,6 +53,9 @@ const App = () => {
 
   return (
     <div>
+      <Header />
+      {!showAuth && <Auth />}
+      {showAuth && <UserProfile />}
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>

@@ -1,4 +1,5 @@
 # Expenses_Calculator
-App created to practice different functionalities of React with Context APi, Redux, Next.js, TypeScript, Unit tests
+
+App created to practice different functionalities of React with Redux
 
 https://expense5calculator.netlify.app
