@@ -7,6 +7,8 @@
   background-color: #3c0080;
   color: white;
   padding: 0 10%;
+  top: 0; /* added */
+  position: fixed; /* added */
 }
 
 .header ul {

@@ -20,3 +20,5 @@ Expenses_Calculator
    4.2 error handling
 
 5. add custom hook for http requests and error handling (see "15-building-custom-hooks-2 / task-organizer")
+
+6. add My Profile form when clicking My Profile button

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 
 import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
 import Child1 from "./TestCounter/child1";
-import "./TestCounter/child1.css";
+// import "./TestCounter/child1.css";
 
 import Header from "./components/Header/Header";
 import Auth from "./components/Auth/Auth";
@@ -42,6 +42,7 @@ const DUMMY_EXPENSES = [
 const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
   const showAuth = useSelector((state) => state.auth.isAuthenticated);
+  const [showProfile, setShowProfile] = useState(false);
 
   const addExpenseHandler = (expense) => {
     console.log(expense);
@@ -51,13 +52,21 @@ const App = () => {
     });
   };
 
+  const showProfileHandler = () => {
+    setShowProfile(!showProfile);
+  };
+
   return (
     <div>
       <Header />
       {!showAuth && <Auth />}
-      {showAuth && <UserProfile />}
-      <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} />
+      {showAuth && (
+        <Fragment>
+          {showProfile && <UserProfile showProfile={showProfileHandler} />}
+          <NewExpense onAddExpense={addExpenseHandler} />
+          <Expenses items={expenses} />
+        </Fragment>
+      )}
     </div>
   );
 };

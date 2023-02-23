@@ -11,7 +11,7 @@
   border: 1px solid #313131;
   border-radius: 12px;
   background-color: #c3b4f3;
-  overflow: hidden;
+  overflow: hidden; /* was hidden */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

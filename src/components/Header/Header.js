@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import classes from "./Header.module.css";
 import { authActions } from "../../store/auth-slice";
 
-const Header = () => {
+const Header = (props) => {
   const dispatch = useDispatch();
   const showAuth = useSelector((state) => state.auth.isAuthenticated);
 
@@ -13,15 +13,12 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <h1>Redux Auth</h1>
+      <h1>Expenses Calculator</h1>
       {showAuth && (
         <nav>
           <ul>
             <li>
-              <a href="/">My Products</a>
-            </li>
-            <li>
-              <a href="/">My Sales</a>
+              <button onClick={props.showProfile}>My Profile</button>
             </li>
             <li>
               <button onClick={logoutHandler}>Logout</button>
