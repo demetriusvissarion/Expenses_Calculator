@@ -3,7 +3,7 @@ import React, { Fragment, useState } from "react";
 import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
-import Child1 from "./TestCounter/child1";
+// import Child1 from "./TestCounter/child1";
 // import "./TestCounter/child1.css";
 
 import Header from "./components/Header/Header";
@@ -71,20 +71,20 @@ const App = () => {
   );
 };
 
-export function Counter() {
-  const [count, setCount] = useState(0);
+// export function Counter() {
+//   const [count, setCount] = useState(0);
 
-  const handleAdd = () => {
-    setCount(count + 1);
-  };
+//   const handleAdd = () => {
+//     setCount(count + 1);
+//   };
 
-  return (
-    <div className="child1_container">
-      <h4>Counter</h4>
-      <Child1 handleAdd={handleAdd} />
-      {count}
-    </div>
-  );
-}
+//   return (
+//     <div className="child1_container">
+//       <h4>Counter</h4>
+//       <Child1 handleAdd={handleAdd} />
+//       {count}
+//     </div>
+//   );
+// }
 
 export default App;
