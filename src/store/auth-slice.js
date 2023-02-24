@@ -19,4 +19,4 @@ const authSlice = createSlice({
 
 export const authActions = authSlice.actions;
 
-export default authSlice.reducer; // beacause we only need the reducer
+export default authSlice.reducer; // because we only need the reducer

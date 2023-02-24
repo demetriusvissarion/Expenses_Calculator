@@ -29,7 +29,6 @@ const DUMMY_EXPENSES = [
 ];
 
 const uniqueId = new Date().getUTCMilliseconds();
-
 const initialExpenseState = DUMMY_EXPENSES;
 
 const expenseSlice = createSlice({
@@ -37,6 +36,9 @@ const expenseSlice = createSlice({
   initialState: { items: initialExpenseState },
   reducers: {
     addExpenses(state, action) {
+      const toDateObj = action.payload.date;
+
+      console.log(toDateObj, "YOYOYO!");
       console.log(action.payload);
       state.items.push({
         id: uniqueId,
