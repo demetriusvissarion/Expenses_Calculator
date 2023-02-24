@@ -1,36 +1,27 @@
-import React, { useState } from "react";
 import "./ExpenseForm.css";
 
+import { useDispatch } from "react-redux";
+import { expenseActions } from "../../store/expense-slice";
+import { useRef } from "react";
+
 const ExpenseForm = (props) => {
-  const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredAmount, setEnteredAmount] = useState("");
-  const [enteredDate, setEnteredDate] = useState("");
+  const dispatch = useDispatch();
 
-  const titleChangeHandler = (event) => {
-    setEnteredTitle(event.target.value);
-  };
-
-  const amountChangeHandler = (event) => {
-    setEnteredAmount(event.target.value);
-  };
-
-  const dateChangeHandler = (event) => {
-    setEnteredDate(event.target.value);
-  };
+  const titleInputRef = useRef();
+  const amountInputRef = useRef();
+  const dateInputRef = useRef(); // .getFullYear().toString()
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    const expenseData = {
-      title: enteredTitle,
-      amount: enteredAmount,
-      date: new Date(enteredDate),
-    };
-
-    props.onSaveExpenseData(expenseData);
-    setEnteredTitle("");
-    setEnteredAmount("");
-    setEnteredDate("");
+    dispatch(
+      expenseActions.addExpenses({
+        id: titleInputRef.current.value,
+        title: titleInputRef.current.value,
+        amount: amountInputRef.current.value,
+        date: dateInputRef.current.value,
+      })
+    );
   };
 
   return (
@@ -38,30 +29,26 @@ const ExpenseForm = (props) => {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input
-            type="text"
-            value={enteredTitle}
-            onChange={titleChangeHandler}
-          />
+          <input id="title" type="text" ref={titleInputRef} />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
           <input
+            id="amount"
             type="number"
             min="0.01"
             step="0.01"
-            value={enteredAmount}
-            onChange={amountChangeHandler}
+            ref={amountInputRef}
           />
         </div>
         <div className="new-expense__control">
           <label>Date</label>
           <input
+            id="date"
             type="date"
             min="2022-12-21"
             max="2023-12-31"
-            value={enteredDate}
-            onChange={dateChangeHandler}
+            ref={dateInputRef}
           />
         </div>
       </div>

@@ -4,21 +4,27 @@ Expenses_Calculator
    1.1 add at startup sign-in & login window and hide everything else 
    1.2 once loged-in add Logout and Profile buttons (only visible after sign-in or login)
        1.2.1 store name & password data on firebase (expenses as well)
-       1.2.2 load existing expenses from firebase or display just the
+       1.2.2 load existing expenses from firebase or display just the empty list
    1.3 add app name on the left side of the navbar
 
 2. switch state management to redux toolkit
    2.1 install react-redux & redux-toolkit
-   2.2 create store folder and index.js + slices: auth, expense, new-expense
+   2.2 create store folder and index.js + slices: auth, expense
 
-3. add sign-up form (modal)
+3. add sign-up form (modal?)
    3.1 form validation
    3.2 error handling
 
-4. add login form (modal)
+4. add login form (modal?)
    4.1 form validation
    4.2 error handling
 
 5. add custom hook for http requests and error handling (see "15-building-custom-hooks-2 / task-organizer")
 
 6. add My Profile form when clicking My Profile button
+
+States to change:
+App.js => expenses
+Expenses.js => selectedYear
+ExpenseForm.js => enteredTitle, enteredAmount, enteredDate
+NewExpense.js => active

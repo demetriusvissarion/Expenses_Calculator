@@ -6,7 +6,9 @@ import ExpensesList from "./ExpensesList";
 import ExpensesChart from "./ExpensesChart";
 import "./Expenses.css";
 
-const Expenses = (props) => {
+import { useSelector } from "react-redux";
+
+const Expenses = () => {
   const [selectedYear, setSelectedYear] = useState(
     new Date().getFullYear().toString()
   );
@@ -15,11 +17,16 @@ const Expenses = (props) => {
     setSelectedYear(year);
   };
 
-  const filteredExpenses = props.items.filter((expense) => {
+  const items = useSelector((state) => state.expense.items);
+  // console.log(items);
+
+  const filteredExpenses = items.filter((expense) => {
     if (selectedYear === "All") {
-      return props.items;
+      return items;
     }
-    return expense.date.getFullYear().toString() === selectedYear;
+    const newDate = new Date(expense.date);
+    return newDate.getFullYear().toString() === selectedYear;
+    // console.log(new Date(expense.date));
   });
 
   return (

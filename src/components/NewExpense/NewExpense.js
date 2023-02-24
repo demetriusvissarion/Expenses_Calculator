@@ -4,6 +4,8 @@ import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 
 const NewExpense = (props) => {
+  const [active, setActive] = useState(false);
+
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
@@ -13,7 +15,6 @@ const NewExpense = (props) => {
     setActive(false);
   };
 
-  const [active, setActive] = useState(false);
   const onClick = () => setActive(true);
   const closeForm = () => setActive(false);
 
@@ -36,21 +37,3 @@ const NewExpense = (props) => {
 };
 
 export default NewExpense;
-
-/* 
-here onSaveExpenseData is a function
-onSaveExpenseData prop receives saveExpenseDatahandler function as a value, so we don't execute it here, we just point at the function, so that the function itself is passed to expense form
-*/
-
-//////// original
-//   <div className="new-expense">
-//     <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
-//   </div>
-
-////// Assignment 4: action plan
-// display only "Add New Expense" button page at begining (with existing expenses below)
-// set onClick to link the button to ExpenseForm
-// hide the "Add New Expense" button while the ExpenseForm is open
-// add new "Close" button inside the ExpenseForm
-
-// when buttons "Closed" or "Add expense" are clicked exit the ExpenseForm and come back to "Add New Expense" button page
