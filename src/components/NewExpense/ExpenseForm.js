@@ -22,6 +22,7 @@ const ExpenseForm = (props) => {
         date: dateInputRef.current.value,
       })
     );
+    props.closeform();
   };
 
   return (
@@ -56,7 +57,9 @@ const ExpenseForm = (props) => {
         <button type="reset" onClick={() => props.closeform()}>
           Cancel
         </button>
-        <button type="submit">Add Expense</button>
+        <button type="submit" onSubmit={submitHandler}>
+          Add Expense
+        </button>
       </div>
     </form>
   );

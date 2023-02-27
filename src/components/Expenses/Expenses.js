@@ -11,9 +11,7 @@ import { filterActions } from "../../store/filter-slice";
 
 const Expenses = () => {
   const dispatch = useDispatch();
-  const [selectedYear, setSelectedYear] = useState(
-    new Date().getFullYear().toString()
-  );
+  const [selectedYear, setSelectedYear] = useState("All"); // new Date().getFullYear().toString()
 
   const selectedYearChangeHandler = (year) => {
     setSelectedYear(year);
@@ -21,7 +19,7 @@ const Expenses = () => {
   };
 
   const test = useSelector((state) => state.filter);
-  console.log(test, "yeayh");
+  // console.log(test, "yeayh");
 
   const items = useSelector((state) => state.expense.items);
   // console.log(items);

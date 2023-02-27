@@ -37,15 +37,19 @@ const filterSlice = createSlice({
     filterByYear(state, action) {
       // console.log(action.payload);
       const year = action.payload.year;
+      console.log(year);
       const items = action.payload.items;
       const filteredExpenses = items.filter((item) => {
         if (year === "All") {
           return items;
         }
         const newDate = new Date(item.date);
+        let counter = 0;
+        counter++;
+        console.log(counter);
         return newDate.getFullYear().toString() === year;
       });
-      console.log(filteredExpenses);
+      // console.log(filteredExpenses);
       state.items = filteredExpenses;
     },
   },

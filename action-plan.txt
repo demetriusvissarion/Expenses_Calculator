@@ -28,3 +28,7 @@ App.js => expenses
 Expenses.js => selectedYear
 ExpenseForm.js => enteredTitle, enteredAmount, enteredDate
 NewExpense.js => active
+
+
+2023.02.27
+issue with cloning states when adding new form

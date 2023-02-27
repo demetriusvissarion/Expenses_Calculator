@@ -36,15 +36,21 @@ const expenseSlice = createSlice({
   initialState: { items: initialExpenseState },
   reducers: {
     addExpenses(state, action) {
-      const toDateObj = action.payload.date;
+      const date = action.payload.date; // 2023-02-27
+      // console.log("This is the raw date:" + date);
+      const convertDateObj = new Date(
+        date.substr(0, 4),
+        date.substr(5, 2) - 1,
+        date.substr(8, 2)
+      ); // Mon Feb 27 2023 00:00:00 GMT+0000 (Greenwich Mean Time)
 
-      console.log(toDateObj, "YOYOYO!");
-      console.log(action.payload);
+      // console.log(convertDateObj, "YOYOYO!");
+      // console.log(action.payload);
       state.items.push({
         id: uniqueId,
         title: action.payload.title,
         amount: action.payload.amount,
-        date: action.payload.date,
+        date: convertDateObj,
       });
     },
   },
